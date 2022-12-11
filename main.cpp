@@ -8,10 +8,10 @@ using namespace std;
 
 int main()
 {
-
     game game;
     game.setShips();
     game.getShips();
+    game.map();
 
     enemyShip *a;
 

@@ -10,7 +10,7 @@ class game
 {
 public:
     game();
-
+    void map(void);
     void setShips(void);
     void getShips(void);
 
