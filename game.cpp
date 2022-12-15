@@ -96,17 +96,17 @@ int controlEnemy = 0;
             }
         }
 /*
- * Slow enemy -> 'V'
+ * Slow enemy -> 'V'    aparte functie ?
  * Fast enemy -> 'Y'
-*/      if (controlEnemy >10)
+*/      if (controlEnemy >3)
         {
 //-------------to do ------- kijken naar 'Mode' voor een van de 2 op te roepen
-        gameArea[movementEnemySlow][xCoordinates]=' ';
-        gameArea[movementEnemyFast][xCoordinates]=' ';
-        movementEnemySlow++;
-        movementEnemyFast=movementEnemyFast+2;
-        gameArea[movementEnemySlow][xCoordinates]='V';
-        gameArea[movementEnemyFast][xCoordinates]='Y';
+        gameArea[movementEnemySlow][10]=' ';
+        //gameArea[movementEnemyFast][xCoordinates]=' ';
+        movementEnemySlow= movementEnemySlow+1;
+        //movementEnemyFast=movementEnemyFast+2;
+        gameArea[movementEnemySlow][10]='V';
+        //gameArea[movementEnemyFast][xCoordinates]='Y';
 /* -------------to do -------
         if (waarde regel 94 = true)
         {
@@ -129,7 +129,7 @@ int controlEnemy = 0;
  * if enemyship hits 15 (last line) game ends
  * and loop will exit
 */
-        if (movementEnemyFast==16)
+        if (movementEnemyFast==16 || movementEnemySlow==16)
         {
             break;
         }
