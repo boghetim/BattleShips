@@ -4,7 +4,7 @@
 #include "game.h"
 #include "enemyship.h"
 
-using namespace std;
+
 
 int main()
 {

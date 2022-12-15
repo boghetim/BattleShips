@@ -53,14 +53,23 @@ void game::map()
         {'|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'}
     };
 
-    for(unsigned int y_as=0; y_as < 16; y_as++)
-    {
-        for(unsigned int x_as=0; x_as < map[y_as].size(); x_as++)
+
+        for(unsigned int y_as=0; y_as < 16; y_as++)
         {
-        cout<<map[y_as][x_as];
+            for(unsigned int x_as=0; x_as < map[y_as].size(); x_as++)
+            {
+                cout<<map[y_as][x_as];
+            }
+            cout<<endl;
         }
-        cout<<endl;
-    }
+        //67 is right arrow , 68 is left arrow
+
+
+}
+
+void game::ModifyMap()
+{
+
 }
 
 void game::setShips()

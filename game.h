@@ -4,6 +4,7 @@
 #include "fastenemy.h"
 #include "slowenemy.h"
 #include "userShip.h"
+#include <vector>
 
 
 class game
@@ -11,6 +12,7 @@ class game
 public:
     game();
     void map(void);
+    void ModifyMap(vector<vector<char>>);
     void setShips(void);
     void getShips(void);
 
