@@ -12,14 +12,16 @@ class game
 public:
     game();
     void map(void);
-    void ModifyMap(vector<vector<char>>);
+    void ModifyMap(int yCoordinates, int xCoordinates);
     void setShips(void);
     void getShips(void);
+
 
 private:
     userShip shipName;
     fastEnemy fast;
     slowEnemy slow;
+    vector<vector<char>>gameArea;
 
 };
 
