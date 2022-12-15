@@ -21,6 +21,8 @@ game::game()
 int yCoordinates=15;
 int xCoordinates=30;
 int tempCoordinates;
+int movementEnemySlow=0;
+int movementEnemyFast=0;
 char arrow;
 
     cout <<"  _     _  _______  ___      _______  _______  __   __  _______  "<< endl;
@@ -52,10 +54,11 @@ char arrow;
     map();
     ModifyMap(yCoordinates,xCoordinates);
 
+//----------------------------------Game Start-----------------------------------------------------------------
 
 
 
-    for(;;)    //kan boolen van gemaakt worden
+    for (int controlEnemy = 0;; ++controlEnemy)  //kan boolen van gemaakt worden
     {
  /*
   * printing of the usership to new coordinates (left of right)
@@ -88,9 +91,27 @@ char arrow;
              ModifyMap(yCoordinates,xCoordinates);
             }
         }
+/*
+ * Slow enemy -> 'V'
+ * Fast enemy -> 'Y'
+*/      if (controlEnemy >5)
+        {
+
+        gameArea[movementEnemySlow][xCoordinates]=' ';
+        gameArea[movementEnemyFast][xCoordinates]=' ';
+        movementEnemySlow=+1;
+        movementEnemyFast=+2;
+        gameArea[movementEnemySlow][xCoordinates]='V';
+        gameArea[movementEnemyFast][xCoordinates]='Y';
+
+        controlEnemy=0;
+        }
+
+
+
 
     }
-    cout << "exit" <<endl;
+        cout << "exit" <<endl;
 
 }
 
