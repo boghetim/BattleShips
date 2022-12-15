@@ -132,11 +132,12 @@ int controlEnemy = 0;
         if (movementEnemyFast==16)
         {
             break;
-            cout << "exit" <<endl;
         }
 
     }
         cout << "exit 2" <<endl;
+
+        //userShip.death();
 
 }
 
