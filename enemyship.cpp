@@ -5,7 +5,7 @@
 
 using namespace std;
 
-enemyShip::enemyShip()
+enemyShip::enemyShip(string name) : name(name)  //oop: 5
 {
 
 }

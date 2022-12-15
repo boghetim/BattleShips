@@ -6,7 +6,7 @@
 class slowEnemy : public enemyShip      //inheritance class
 {
 public:
-    slowEnemy();
+    slowEnemy(); //oop: 1 (2/2)
     void Mode();
 };
 

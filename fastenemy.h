@@ -6,7 +6,8 @@
 class fastEnemy : public enemyShip  //inheritance class
 {
 public:
-    fastEnemy();
+    fastEnemy(){};
+    fastEnemy(std::string name); //oop: 2 (2/2)
     void Mode();
 };
 

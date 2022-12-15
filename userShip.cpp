@@ -3,7 +3,7 @@
 
 using namespace std;
 
-userShip::userShip()
+userShip::userShip() //oop: 2 parameterized van maken
 {
 
 }
@@ -13,9 +13,9 @@ userShip::~userShip()
 
 }
 
-void userShip::setName(string newName)
+void userShip::setName(string name)
 {
-    name = newName;
+    this->name=name;    //oop:8
 }
 
 string userShip::getName()

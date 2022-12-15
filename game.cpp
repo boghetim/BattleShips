@@ -18,9 +18,9 @@ game::game()
 /*
  * start coordinates for users ship
 */
-int yCoordinates=15;
+int yCoordinates=16;
 int xCoordinates=30;
-int tempCoordinates;
+int tempCoordinates=30;
 int movementEnemySlow=0;
 int movementEnemyFast=0;
 char arrow;
@@ -56,9 +56,9 @@ char arrow;
 
 //----------------------------------Game Start-----------------------------------------------------------------
 
+int controlEnemy = 0;
 
-
-    for (int controlEnemy = 0;; ++controlEnemy)  //kan boolen van gemaakt worden
+    for(;;)  //kan boolen van gemaakt worden
     {
  /*
   * printing of the usership to new coordinates (left of right)
@@ -71,47 +71,72 @@ char arrow;
         {
             tempCoordinates=xCoordinates;
             xCoordinates=tempCoordinates-1;
-            ModifyMap(yCoordinates,xCoordinates);
             gameArea[yCoordinates][tempCoordinates]=' ';
+            ModifyMap(yCoordinates,xCoordinates);
         }
         if (arrow == 'd' && xCoordinates <60)
         {
             tempCoordinates=xCoordinates;
             xCoordinates=tempCoordinates+1;
-            ModifyMap(yCoordinates,xCoordinates);
             gameArea[yCoordinates][tempCoordinates]=' ';
+            ModifyMap(yCoordinates,xCoordinates);
         }
         if (arrow == 32)    //spacebar press
         {
-            for (int var = 1; var < 15; ++var)
+            for (int var = 1; var < 16; ++var)
             {
              gameArea[yCoordinates-var][xCoordinates]='*';
              ModifyMap(yCoordinates,xCoordinates);
              gameArea[yCoordinates-var][xCoordinates]=' ';
              ModifyMap(yCoordinates,xCoordinates);
+             if (yCoordinates == movementEnemyFast)
+             {
+//-------------to do ------- een waarde mss boolen gebruiken voor enemy ship te resetten
+             }
             }
         }
 /*
  * Slow enemy -> 'V'
  * Fast enemy -> 'Y'
-*/      if (controlEnemy >5)
+*/      if (controlEnemy >10)
         {
-
+//-------------to do ------- kijken naar 'Mode' voor een van de 2 op te roepen
         gameArea[movementEnemySlow][xCoordinates]=' ';
         gameArea[movementEnemyFast][xCoordinates]=' ';
-        movementEnemySlow=+1;
-        movementEnemyFast=+2;
+        movementEnemySlow++;
+        movementEnemyFast=movementEnemyFast+2;
         gameArea[movementEnemySlow][xCoordinates]='V';
         gameArea[movementEnemyFast][xCoordinates]='Y';
-
-        controlEnemy=0;
+/* -------------to do -------
+        if (waarde regel 94 = true)
+        {
+          movementEnemyFast=0;
+          x waarde voor enemy= random getal      //reset plaats
         }
 
+  */
 
+ /*  -------------to do -------
 
+   hoe X as random maken en tot hij dood is?
+   - vaste aantal enemys maken vb 5 waarvan 5 variable maken die heel de tijd gereset worden bij door gaat (regel 110)?
+
+   */
+        controlEnemy=0;
+        }
+        ++controlEnemy;
+/*
+ * if enemyship hits 15 (last line) game ends
+ * and loop will exit
+*/
+        if (movementEnemyFast==16)
+        {
+            break;
+            cout << "exit" <<endl;
+        }
 
     }
-        cout << "exit" <<endl;
+        cout << "exit 2" <<endl;
 
 }
 
@@ -137,24 +162,9 @@ void game::map(void)
         {'|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'},
         {'|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'},
         {'|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'},
+        {'|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'},
         {'|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '|'}
     };
-
-
-
- /*
-  * testing for empty map
-
-        for(unsigned int y_as=0; y_as < 16; y_as++)
-        {
-            for(unsigned int x_as=0; x_as < gameArea[y_as].size(); x_as++)
-            {
-                cout<<gameArea[y_as][x_as];
-            }
-            cout<<endl;
-        }
-*/
-
 }
 
 void game::ModifyMap(int yCoordinates, int xCoordinates)
@@ -164,7 +174,7 @@ void game::ModifyMap(int yCoordinates, int xCoordinates)
     system("CLS");
 
 
-    for(unsigned int y_as=0; y_as < 16; y_as++)
+    for(unsigned int y_as=0; y_as < 17; y_as++)
     {
         for(unsigned int x_as=0; x_as < gameArea[y_as].size(); x_as++)
         {
@@ -172,9 +182,6 @@ void game::ModifyMap(int yCoordinates, int xCoordinates)
         }
         cout<<endl;
     }
-
-    gameArea[yCoordinates][xCoordinates]=' ';
-
 }
 
 void game::setShips()

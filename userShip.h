@@ -10,16 +10,16 @@ class userShip
 {
 public:
     userShip();
-    ~userShip();
+    ~userShip(); //oop: 4 (2/2)
 
-    void setName(string newName);
+    void setName(string name);  //oop:12
     string getName(void);
 
     void death();
     void battleship();
 
-private:
-    string name;
+private:    //algemeen: 3
+    string name;    //oop:11
 };
 
 #endif // USERSHIP_H
