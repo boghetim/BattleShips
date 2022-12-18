@@ -22,7 +22,25 @@ and u can shoot ('*') with the spacebar
 - the enemy Ships will come from above vertically down in slow or fast pace, depend on the difficulty u picked
 (both difficulty will be slow and fast ships mixed -> DLC)
 
->making of the project:
+
+>HOW TO RUN PROJECT:
+
+For this project i used Qt Creator 8.0.1(community) with windows 10 and 11.
+This with no al the default setting in Qt Creator.
+open the alien_shooter.pro file when al the .h and .cpp files are in the same folder for clean result.
+this with the Desktop Qt 6.3.2 MinGW 64-bit one that is seen in the picture below.
+
+----
+to play the game i recommended to run the game in the terminal.
+this is done by going to the "Projects" setting and in the "run" tab u will find "run in terminal" 
+check the box to play it in terminal.
+
+------
+
+
+
+
+>MAKING OF THE PROJECT:
 
 First making the classes of the ships -> enemy ship and user ship.
 Making an inheritance from enemy ship for slow and fast enemy ship.
