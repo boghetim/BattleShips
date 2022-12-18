@@ -15,19 +15,9 @@
     cout <<" |   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |  "<< endl;
     cout <<" |   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |  "<< endl;
     cout <<" |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|  "<< endl;
-    
-    
-    
-  //spaceship 
- cout <<" ^  "<< endl;
- cout <<"| |  "<< endl;
- cout <<"/ \\  "<< endl;
- 
- 
- 
- //enemyship
- 
- 
+  
+ //DLC
+ (making space ships more visual)
  
  
  
