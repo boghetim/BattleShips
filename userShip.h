@@ -16,7 +16,6 @@ public:
     string getName(void);
 
     void death();
-    void battleship();
 
 private:    //algemeen: 3
     string name;

@@ -41,9 +41,3 @@ void userShip::death()
 }
 
 
-void userShip::battleship()
-{
- cout <<" ^  "<< endl;
- cout <<"| |  "<< endl;
- cout <<"/ \\  "<< endl;
-}
