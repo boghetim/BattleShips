@@ -30,12 +30,13 @@ This with no al the default setting in Qt Creator.
 open the alien_shooter.pro file when al the .h and .cpp files are in the same folder for clean result.
 this with the Desktop Qt 6.3.2 MinGW 64-bit one that is seen in the picture below.
 
-----
+![Config project](pictures_and_other_file(not_needed_for_running_project)/configure_project.png?raw=true)
+
 to play the game i recommended to run the game in the terminal.
 this is done by going to the "Projects" setting and in the "run" tab u will find "run in terminal" 
 check the box to play it in terminal.
 
-------
+![run in terminal](pictures_and_other_file(not_needed_for_running_project)/run_in_terminal.png?raw=true)
 
 
 
