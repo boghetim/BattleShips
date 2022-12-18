@@ -7,5 +7,5 @@ name= "titular Battlestar Galactica";
 
 void fastEnemy::Mode()
 {
-//snelheid regelen fastEnemy (vb met timer)
+
 }

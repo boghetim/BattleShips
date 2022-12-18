@@ -19,7 +19,7 @@ public:
     void battleship();
 
 private:    //algemeen: 3
-    string name;    //oop:11
+    string name;
 };
 
 #endif // USERSHIP_H
